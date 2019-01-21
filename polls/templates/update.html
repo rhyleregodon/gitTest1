@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    this is the update page
+
+{% endblock head %}
+{% block body %}
+    <form action="{% url 'polls:update' form.instance.id %}" method="POST">
+    {% csrf_token %}
+
+    {% for field in form %}
+        {{ field.label }} {{ field }}
+    {% endfor %}
+    {{ form }}
+
+
+    <input type="submit" value = "Update"
+{% endblock body %}

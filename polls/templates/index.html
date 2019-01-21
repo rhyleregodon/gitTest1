@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock head %}
+
+
+{% block body %}
+<ol>
+{% for question in questions %}    
+    <li>
+    <a href = '{% url "polls:details" question.id %}'> Question: {{ question.question_text }} </a><br />
+</li>
+{% endfor %}
+</ol>
+
+{% endblock body %}

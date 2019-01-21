@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+this is the detail page
+{% endblock head %}
+
+{% block body %}
+
+    {{ question.question_text }}
+    {{ question.pub_date }}
+
+    {% for choice in questions.choices.all %}
+        choice: {{choice.choice_text}} | votes {{choice.votes}}
+
+{% endfor %}
+
+{% endblock body %}
